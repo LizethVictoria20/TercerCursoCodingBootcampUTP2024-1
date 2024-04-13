@@ -1,5 +1,11 @@
 const prompt = require('prompt-sync')();
 
+function Convertion(){
+  console.log("Convertir Celsius a Fahrenheit");
+  let  celcius = prompt("Por favor digite los centigrados a convertir a Fahrenheit: ");
+  let fahrenheit = (9 / 5 * celcius) + 32;
+  console.log(`${celcius}ºC son ${fahrenheit} grados en Fahrenheit`);
+}
 
 function Menu(){
   console.log("\nMenú:");
