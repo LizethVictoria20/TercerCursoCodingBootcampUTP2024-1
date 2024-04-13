@@ -25,11 +25,33 @@ function GeneradorNombreUsuario(){
   console.log(`Nombre de usuario combinado: ${NombreUsuario}`);
 }
 
+function Fibonacci(){
+  let total = prompt('Ingrese el valor de n: ')
+  let firstPos = 0;
+  let secodPos = 1;
+  let suma = 1;
+
+  if(total == 1){
+    console.log("La primera posición es igual a 0")
+  }
+  else {
+    for(let i = 2; i < total; i++){
+      suma = firstPos + secodPos;
+      firstPos = secodPos;
+      secodPos = suma;
+    }
+    console.log(`El ${total}-ésimo número de Fibonacci es ${suma}`);
+  }
+}
+
+
 function Menu(){
   console.log("\nMenú:");
   console.log("1. Convertir Celsius a Fahrenheit ");
   console.log("2. Calcular Indice de Masa Corporal (IMC) ");
   console.log("3. Generar nombre de usuario");
+  console.log("4. Generar número Fibonacci");
+  console.log("5. Salir");
   let option = prompt("Seleccione una opción: ");
 
   switch(option) {
@@ -41,6 +63,14 @@ function Menu(){
       Menu();
     case "3":
       GeneradorNombreUsuario();
+      Menu();
+    case "4":
+      Fibonacci();
+      Menu();
+      case "5":
+        break;
+    default:
+      console.log("\nPor favor ingresa una opción válida")
       Menu();
   }
 }
