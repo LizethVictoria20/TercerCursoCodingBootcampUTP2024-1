@@ -1,10 +1,48 @@
+/*
+- Fecha de publicación: 13.04.2023
+- Hora de publicación: 1:30am
+- Versión de su código: 5
+- Autores: Ing(c): Lizeth Victoria Franco - Andrea Zapata Bolivar
+- Nombre del lenguaje utilizado: “ECMASCRIPT 6.0” (javascript 6.0)
+- Versión del lenguaje utilizado: 6.0
+- Universidad Tecnológica de Pereira
+- Programa de Ingeniería de Sistemas y Computación
+- Descripción de la funcionalidad del programa: 
+  Para realizar este proyecto instalamos prompt-sync de Node para asi poder recibir y almacenar datos que ingresa 
+  el usuario por medio del teclado.
+  Este programa contiene 5 funciones:
+    1. Función que convierte grados Celsius a Fahrenheit teniendo en cuenta la fórmula: 
+      (9/5 * C°) + 32. Donde el dato de C° se le pide ingresarlo al usuario.
+      Input: 32
+      Output: 32C° son 89.6 grados Fahrenheit
+    2. Función que calcula el Indece de Masa Corporal (IMC) teniendo en cuenta la fórmula:
+      peso/(altura)^2. Donde peso es pedido en kilogramos y altura en metros y se le pide ingresarlo al usuario.
+      Input: 70
+            1.75
+      Output: Tu indice de masa corporal (IMC) es 22.86
+    3. Función que genera un nombre de usuario concatenando los datos de nombre, apellido y año de nacimiento.
+      Estos datos se le pide ingresarlo al usuario.
+      Input: Liz
+            Victoria
+            2002
+      Output: LizVictoria2002
+    4. Función que retorna el n-ésimo número de Fibonacci ingresado por el usuario.
+      Input: 7
+      Output: 8
+    5. Función que crea un Menú en la consola con 5 opciones que se pueden seleccionar escribiendo el número
+      de la opcíon. Cada opción le corresponde a cada una de las funciones descritas anteriormente.
+      Este menú solo se deja de mostrar al usuario cuando se selecciona la opción 5. 
+*/
+
+
+
 const prompt = require('prompt-sync')();
 
 function Convertion(){
   console.log("Convertir Celsius a Fahrenheit");
   let  celcius = prompt("Por favor digite los centigrados a convertir a Fahrenheit: ");
   let fahrenheit = (9 / 5 * celcius) + 32;
-  console.log(`${celcius}ºC son ${fahrenheit} grados en Fahrenheit`);
+  console.log(`${celcius}C° son ${fahrenheit} grados Fahrenheit`);
 }
 
 function IndiceMasaCorporal(){
