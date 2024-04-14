@@ -40,7 +40,7 @@ const prompt = require('prompt-sync')(); //Llama a la función nativa de Node pa
 
 function Convertion(){
   console.log("Convertir Celsius a Fahrenheit");
-  let  celcius = prompt("Por favor digite los centigrados a convertir a Fahrenheit: "); //Pide valor de celcius al usuario
+  let  celcius = prompt("Por favor digite los centigrados a convertir a Fahrenheit: "); //Almacena el valor de celcius que el usuario ingresa usuario
   let fahrenheit = (9 / 5 * celcius) + 32; //Guarda el resultado de la operación que hace la conversión de C° a F°
   console.log(`${celcius}C° son ${fahrenheit} grados Fahrenheit`);
 }
