@@ -92,24 +92,25 @@ function Menu(){
   console.log("5. Salir");
   let option = prompt("Seleccione una opción: "); //Pide al usuario la opción que quiere ejecutar del menú.
 
+  console.log(typeof option)
   switch(option) {
     case "1":
       Convertion();
-      Menu();
+      return Menu();
     case "2":
       IndiceMasaCorporal();
-      Menu();
+      return Menu();
     case "3":
       GeneradorNombreUsuario();
-      Menu();
+      return Menu();
     case "4":
       Fibonacci();
-      Menu();
-      case "5":
-        break;
+      return Menu();
+    case "5":
+      break;
     default:
       console.log("\nPor favor ingresa una opción válida")
-      Menu();
+      return Menu();
   }
 }
 
