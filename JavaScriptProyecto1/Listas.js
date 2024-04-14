@@ -24,3 +24,11 @@ function ListaNumeros(){
 }
 
 ListaNumeros()
+
+function InvertirLista(){
+    let lista = [2, 3, 7, 4, 1, 9];
+    let reverseList = [...lista].reverse();
+    console.log(typeof(reverseList))
+    console.log(`Lista original [${lista}]`)
+    console.log(`Lista invertida [${reverseList}]`)
+}
