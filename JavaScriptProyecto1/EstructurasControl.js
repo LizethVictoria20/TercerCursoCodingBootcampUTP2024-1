@@ -72,4 +72,32 @@ function ContadorVocales(){
     console.log(`El total de la vocal u es: ${vocalU}`)
     
 }
-ContadorVocales()
+
+function Menu(){
+    console.log("\nMenú:");
+    console.log("1. Adivinar número");
+    console.log("2. Calcular el factorial de un número");
+    console.log("3. Conocer el total de vocales de una frase");
+    console.log("5. Salir");
+    let option = prompt("Seleccione una opción: "); //Pide al usuario la opción que quiere ejecutar del menú.
+  
+    switch(option) {
+      case "1":
+        AdivinarNumero();
+        return Menu();
+      case "2":
+        CalculadoraFactorial();
+        return Menu();
+      case "3":
+        ContadorVocales();
+        return Menu();
+      case "5":
+        break;
+      default:
+        console.log("\nPor favor ingresa una opción válida")
+        return Menu();
+    }
+  }
+  
+  Menu()
+  
