@@ -1,7 +1,7 @@
 /*
 - Fecha de publicación: 13.04.2023
 - Hora de publicación: 1:30am
-- Versión de su código: 5
+- Versión de su código: 23
 - Autores: Ing(c): Lizeth Victoria Franco - Andrea Zapata Bolivar
 - Nombre del lenguaje utilizado: “ECMASCRIPT 6.0” (javascript 6.0)
 - Versión del lenguaje utilizado: 6.0
