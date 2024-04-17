@@ -21,7 +21,6 @@ function Fibonacci(){
         (accumulator, currentValue) => accumulator + currentValue,
         sumaTotal,
       );
-    console.log(lista)
-    console.log(`y su suma es: ${functionReduce + 1}`)
+    console.log(`${lista.toString()} y su suma es: ${functionReduce + 1}` )
 }
 Fibonacci()
