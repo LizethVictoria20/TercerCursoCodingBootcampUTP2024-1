@@ -5,17 +5,18 @@ function Fibonacci(){
     let lista = [];
     let functionReduce;
     let sumaTotal = 0
-    for(let i = 1; i < 11; i++){
-        if(FirstPos < 100){
+    if(FirstPos < 100){
+        for(let i = 1; i < 11; i++){
             suma = FirstPos + SecodPos;//Se sobreescriben los valores iniciales
             FirstPos = SecodPos; //Se sobreescriben los valores iniciales
             SecodPos = suma;//Se sobreescriben los valores iniciales
             lista.push(suma);
         }
-        else{
+    }
+    else {
             console.log("Terminó")
         }
-    }
+    
     functionReduce = lista.reduce(
         (accumulator, currentValue) => accumulator + currentValue,
         sumaTotal,
