@@ -1,29 +1,37 @@
 function ImprimirP(){
-    let filas = 13
-    let espacios;
-    let patrones;
-    let espacios34 = 0
+    let i = -1
+    let iAux;
+    let j = 14
+    let jAux = 14
+    let k = 0 //Número de filas
+    let o34Espacios = 0
 
-  
-        for (let i = 0; i < filas; i++) {
-            espacios = ' ';
-            for (let j = 0; j < i; j++) {
-                espacios += ' ';
-                
-            }
-            patrones = '';
-            for (let k = 0; k < filas - i - 2; k++) {
-                while (espacios34 < 34){
-                    process.stdout.write(" ")
-                    espacios34++
-                }
-                patrones += 'P ';
-            }
-            console.log(espacios + patrones);
+    while (i < 6) {
+        //aqui se ponen los espacios reiniciar variable
+        o34Espacios = 0
+        while (o34Espacios < 34){
+            process.stdout.write(" ")
+            o34Espacios++
         }
-    
 
-    
+        i ++ 
+        iAux = i
+
+        while ( iAux > 0) {
+            process.stdout.write(" ") //Crea los espacios hacia la derecha
+            iAux--
+        }
+
+        j = jAux -= 2
+
+        while (j >= 0){
+        process.stdout.write("P")
+        j--
+        }
+        console.log(' ')//Crea los espacios hacia la izquierda
+        k++
+    }
+    jAux--
 }
 ImprimirP();
 
@@ -35,3 +43,5 @@ ImprimirP();
 //    P P P
 //     P P
 //     P
+
+
