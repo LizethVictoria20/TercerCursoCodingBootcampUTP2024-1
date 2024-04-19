@@ -4,20 +4,22 @@
 - Versión de su codigo: 03
 - Autores del lenguaje utilizado: ECMASCRIPT 6.0 (javascrit 6.0)
 - Versión del lenguaje utilizado: 6.0
-- Presentado por:   
-                    Ingeniera Luisa Victoria
-                    Ingeniera Lizeth 
-                    Ingeniera Andrea
-                    Ingeniero Juan Manuel
-                    Ingeniero Santiago Castaño
-                    Ingeniero Andres
-                    Ingeniero Camilo
-
+- Autores: Ing(c):   Luisa Victoria, Lizeth Victoria, Andrea Zapata, Juan Manuel Hurtado, Santiago Castaño, Andres Jaramillo, Camilo
 - Universidad Tecnológica de Pereira
 - Programa de Ingenieria de Sistemas y Computación
 - Descripcion del programa:
-Crea una una imagen de una Piramide a la derecha en la columna 80, con la letra A y en la cantidad de lineas solicitadas (25 Filas)
+    Crea una una imagen de una Piramide a la derecha en la columna 80, con la letra A y en la cantidad de lineas 
+    solicitadas (25 Filas)
+        Output:  A
+                AA
+               AAA
+              AAAA
+             AAAAA
+            AAAAAA
+           AAAAAAA
+          AAAAAAAA 
 */
+
 function Piramide() {
     //Altura de la Piramide
     let Altura = 25;

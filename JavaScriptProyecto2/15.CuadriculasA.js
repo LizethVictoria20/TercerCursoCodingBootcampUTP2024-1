@@ -1,27 +1,26 @@
 /*
-- Fecha de publicación: 19 de abril del 2024
-- Hora: 2:00 PM
-- Versión de su codigo: 1
-- Autores del lenguaje utilizado: ECMASCRIPT 6.0 (javascrit 6.0)
+- Fecha de publicación: 16.04.2023
+- Hora de publicación: 15:30pm
+- Versión de su código: 31
+- Autores: Ing(c):   Luisa Victoria, Lizeth Victoria, Andrea Zapata, Juan Manuel Hurtado, Santiago Castaño, Andres Jaramillo, Camilo
+- Nombre del lenguaje utilizado: “ECMASCRIPT 6.0” (javascript 6.0)
 - Versión del lenguaje utilizado: 6.0
-- Presentado por:   
-                    Ingeniera Luisa Victoria
-                    Ingeniera Lizeth 
-                    Ingeniera Andrea
-                    Ingeniero Juan Manuel
-                    Ingeniero Santiago Castaño
-                    Ingeniero Andres
-                    Ingeniero Camilo
-
 - Universidad Tecnológica de Pereira
-- Programa de Ingenieria de Sistemas y Computación
-- Descripcion del programa:
-Crea un patron parecido a un moño con las letras A utilizando ciclos anidados
+- Programa de Ingeniería de Sistemas y Computación
+- Descripción de la funcionalidad del programa: 
+    Este programa imprime un patrón de letras 'P' en la consola, utilizando bucles anidados para controlar.
+    El codigo se divide en 4 partes, izquierda, derecha, izquierda abajo y derecha abajo
+    Imagine que el patron se dividio en cuartos.
+    la cantidad de espacios en blanco y letras 'P' en cada fila.
+     Output:P P P P P P P P P P P P P
+             P P P P P P P P P P P
+               P P P P P P P P P
+                P P P P P P P
+                  P P P P P
+                   P P P
+                     P
+- Salvedad: Si y solo si se garantizan resultados sin cambios en el codigo
 */
-//Salvedad: Si y solo si se garantizan resultados sin cambios en el codigo
-
-//el codigo se divide en 4 partes, izquierda, derecha, izquierda abajo y derecha abajo
-//Imagine que el patron se dividio en cuartos.
 
 function MostrarAs() {
     let contadorLineas = 0

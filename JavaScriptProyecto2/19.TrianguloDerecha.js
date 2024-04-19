@@ -1,23 +1,27 @@
 /*
-- Fecha de publicación: 18 de abril del 2024
-- Hora: 4:00 PM
-- Versión de su codigo: 06
-- Autores del lenguaje utilizado: ECMASCRIPT 6.0 (javascrit 6.0)
+- Fecha de publicación: 16.04.2023
+- Hora de publicación: 15:30pm
+- Versión de su código: 31
+- Autores: Ing(c):   Luisa Victoria, Lizeth Victoria, Andrea Zapata, Juan Manuel Hurtado, Santiago Castaño, Andres Jaramillo, Camilo
+- Nombre del lenguaje utilizado: “ECMASCRIPT 6.0” (javascript 6.0)
 - Versión del lenguaje utilizado: 6.0
-- Presentado por:   
-                    Ingeniera Luisa Victoria
-                    Ingeniera Lizeth 
-                    Ingeniera Andrea
-                    Ingeniero Juan Manuel
-                    Ingeniero Santiago Castaño
-                    Ingeniero Andres
-                    Ingeniero Camilo
-
 - Universidad Tecnológica de Pereira
-- Programa de Ingenieria de Sistemas y Computación
-- Descripcion del programa:
-Crea una una imagen de un Triangulo a la derecha en la columna 40, con la letra Z y en la cantidad de lineas solicitadas
+- Programa de Ingeniería de Sistemas y Computación
+- Descripción de la funcionalidad del programa: 
+    Crea una una imagen de un Triangulo a la derecha en la columna 40
+     Output:                           A
+                                      AA
+                                     AAA
+                                    AAAA
+                                   AAAAA
+                                  AAAAAA
+                                   AAAAA
+                                    AAAA
+                                     AAA
+                                      AA
+                                       A
 */
+
 
 function triangulo() {
     //Altura de la 1era Mitad del Triangulo

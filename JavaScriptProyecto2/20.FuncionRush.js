@@ -1,24 +1,23 @@
 /*
-- Fecha de publicación: 19 de abril del 2024
-- Hora: 2:00 PM
-- Versión de su codigo: 1
-- Autores del lenguaje utilizado: ECMASCRIPT 6.0 (javascrit 6.0)
+- Fecha de publicación: 16.04.2023
+- Hora de publicación: 15:30pm
+- Versión de su código: 31
+- Autores: Ing(c):   Luisa Victoria, Lizeth Victoria, Andrea Zapata, Juan Manuel Hurtado, Santiago Castaño, Andres Jaramillo, Camilo
+- Nombre del lenguaje utilizado: “ECMASCRIPT 6.0” (javascript 6.0)
 - Versión del lenguaje utilizado: 6.0
-- Presentado por:   
-                    Ingeniera Luisa Victoria
-                    Ingeniera Lizeth 
-                    Ingeniera Andrea
-                    Ingeniero Juan Manuel
-                    Ingeniero Santiago Castaño
-                    Ingeniero Andres
-                    Ingeniero Camilo
-
 - Universidad Tecnológica de Pereira
-- Programa de Ingenieria de Sistemas y Computación
-- Descripcion del programa:
-Crea una un patron con datos numericos columnas y filas pedidas por teclado por el usuario rectangulo con asteriscos y las esquinas con slash y back slash
+- Programa de Ingeniería de Sistemas y Computación
+- Descripción de la funcionalidad del programa: 
+    Crea una un patron con datos numericos columnas y filas pedidas por teclado por el usuario rectangulo 
+    con asteriscos y las esquinas con slash y back slash
+    Input: Por favor ingrese el numero de columnas: 2
+           Por favor ingrese el numero de filas: 3
+    Output: /\
+            **
+            \/
+- Salvedad: Si y solo si se garantizan resultados cuando los datos ingresados son NUMEROS ENTEROS POSITIVOS
+
 */
-//Salvedad: Si y solo si se garantizan resultados cuando los datos ingresados son NUMEROS ENTEROS POSITIVOS
 
 
 const prompt = require('prompt-sync')();
