@@ -18,21 +18,30 @@
                 AA
 */
 
-function ImprimirAs() {
-    let espacios = 6
-    let espaciosAux = 6
+let linea = ["","","","","","","","",""];
 
-    for (let i = 0 ; i <= 6 ; i ++)   {
+function valores(){
+    let i = -1;
 
-        process.stdout.write("A")
+    const darValores = setInterval(() => {// le damos un timpo entre cada ciclo
+        linea[i + 1] = "A";
+        linea[7 - i] = "B";
 
-        espacios = espaciosAux
-        while (espacios > 0) {
-            process.stdout.write(" ")
-            espacios -= 1
+        let inv = linea.join(" ");// le decimos que separador tiene 
+        console.clear();
+        console.log(inv);
+        linea[i + 1] = "";
+        linea[7 - i] = "";
+        i++;// aumentamos 1 cada ciclo
+        if (i > 4) {
+            clearInterval(darValores);
+
+        }else if (i == 4){
+            console.clear();
+            console.log("    AA    ");// mensaje de fin
+            // clearInterval(darValores);
         }
-        espaciosAux -= 1
-        process.stdout.write("A\n")
-    }
+    }, 500);
 }
-ImprimirAs()
+
+valores();
