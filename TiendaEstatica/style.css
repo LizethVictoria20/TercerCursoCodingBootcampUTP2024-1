@@ -46,6 +46,11 @@ li img {
 }
 
 /* Products */
+.link-products {
+    color: #545454;
+    text-decoration: none;
+}
+
 .card-products {
     display: flex;
     flex-direction: row;
