@@ -9,13 +9,14 @@ body {
     font-optical-sizing: auto;
     font-style: normal;
     background-color: #F4F1F0;
-    color: #545454
+    color: #545454;
 }
 /* Header and Nav */
 header {
     width: 100%;
     height: 70px;
     background-color: #EBE4E0;
+    box-shadow: 9px -2px 26px -6px rgba(84,84,84,1);
 }
 
 nav {
@@ -67,6 +68,7 @@ h2 {
 }
 
 .container-product {
+    box-shadow: 9px -2px 26px -6px rgba(84,84,84,1);
     width: 280px;
     height: 365px;
     background-color: var(--main-color);
@@ -86,8 +88,6 @@ h2 {
     width: 76px;
     border-radius: 2rem;
     height: 22px;
-
-
 }
 
 /* Form */
@@ -142,7 +142,25 @@ h2 {
     cursor: pointer;
 }
 
-.button-registro a, .button-login a {
+.login {
+    background-color: #efefef;
+    width: 20rem;
+    height: 2rem;
+    border-radius: 2rem;
+    margin: auto;
+    padding-top: .5rem;
+}
+
+.login:hover {
+    background-color: #C6A895;
+}
+
+.button-registro {
+    color: #545454;
+    text-decoration: none;
+}
+
+.button-registro, .button-login {
     text-decoration: none;
     color: #545454;
     font-size: 14px;
@@ -165,6 +183,7 @@ h2 {
     display: grid;
     grid-gap: 10px;
     margin-top: 7rem;
+    gap: 72px;
 }
 
 .container-eachProduct {
@@ -188,21 +207,38 @@ h2 {
 }
 
 .container-shoppingCar {
+    display: grid;
     background-color: #EBE4E0;
-    width: 20rem;
+    width: 18rem;
     height: 24rem;
-    grid-column: 2 / 2;
     padding: 10px 0px 10px 0px;
     text-align: center;
     border-radius: 2rem;
-    justify-self: center;
     align-self: center;
+    grid-template-columns: 145px 100px;
+}
+
+
+.information-product img {
+    width: 36px;
+}
+
+.img-product {
+    width: 150px;
+}
+
+.producto-mini {
+    width: 100px;
+    height: 120px;
+    border-radius: 2rem;
 }
 
 .container-shoppingCar a {
     text-decoration: none;
     color: #545454;
 }
+
+
 
 .agregar-carro {
     background-color: #efefef;
@@ -212,6 +248,7 @@ h2 {
     border-radius: 2rem;
     cursor: pointer;
     padding-top: 14px;
+    margin-left: 20px;
 }
 
 .agregar-carro:hover {
@@ -222,4 +259,3 @@ h2 {
     width: 255px;
     border-radius: 2rem;
 }
-
