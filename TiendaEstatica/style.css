@@ -144,3 +144,46 @@ h2 {
 .button-registro:hover {
     background-color: #C6A895;  
 }
+
+.information {
+    border-radius: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+    display: grid;
+    grid-gap: 10px;
+    margin-top: 7rem;
+}
+
+.container-eachProduct {
+    width: 40rem;
+    height: auto;
+    padding: 10px 0px 10px 0px;
+    text-align: center;
+    border-radius: 2rem;
+    grid-column: 1 / 2;
+    grid-row: 1;
+    background-color: #EBE4E0;
+    justify-self: end;
+}
+
+.information h2 {
+    text-align: center;
+}
+
+.container-shoppingCar {
+    background-color: #EBE4E0;
+    width: 20rem;
+    height: auto;
+    grid-column: 2 / 2;
+    padding: 10px 0px 10px 0px;
+    text-align: center;
+    border-radius: 2rem;
+    justify-self: center;
+}
+
+.container-eachProduct img {
+    width: 255px;
+    border-radius: 2rem;
+}
+
+
+
