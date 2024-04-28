@@ -1,0 +1,24 @@
+¨*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    background-color: black;
+}
+
+nav{
+    
+}
+
+ul {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+
+}
+
+
+.LoginandCarrito {
+
+}
