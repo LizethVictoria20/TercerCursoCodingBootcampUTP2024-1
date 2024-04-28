@@ -259,3 +259,36 @@ h2 {
     width: 255px;
     border-radius: 2rem;
 }
+
+/* Media queries tablet */
+@media all and (min-width: 480px) and (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+        width: 21rem;
+    }
+    header {
+        width: 146%;
+    }
+    .card-products {
+        flex-direction: column;
+        align-items: center;
+    }
+    .products {
+        width: 31rem;
+    }
+    .form-login {
+        width: 25rem;
+        margin-left: 3.3rem;
+    }
+}
+
+/* Media queries tamaño teléfonos (480-menos ) */
+@media all and (max-width: 480px) { 
+    header {
+    }
+    .card-products {
+        flex-direction: column;
+        align-items: center;
+    }
+  
+}
