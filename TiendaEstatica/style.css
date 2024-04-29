@@ -17,6 +17,9 @@ header {
     height: 70px;
     background-color: #EBE4E0;
     box-shadow: 9px -2px 26px -6px rgba(84,84,84,1);
+    position: fixed;
+    top: 0;
+    z-index: 1;
 }
 
 nav {
@@ -63,7 +66,7 @@ li img {
 
 h2 {
     text-align: center;
-    margin-top: 54px;
+    margin-top: 130px;
     margin-bottom: 46px;
     text-transform: uppercase;
 }
@@ -81,6 +84,10 @@ h2 {
 .container-product img {
     width: 240px;
     border-radius: 1rem;
+}
+
+.description {
+    text-align: justify;
 }
 
 .product-price p {
@@ -143,6 +150,11 @@ h2 {
     cursor: pointer;
 }
 
+.registrarse-login:hover {
+    color:#C6A895;
+    
+}
+
 .login {
     background-color: #efefef;
     width: 20rem;
@@ -192,7 +204,7 @@ h2 {
 .container-eachProduct {
     width: 40rem;
     height: auto;
-    padding: 10px 0px 10px 0px;
+    padding: 10px 20px 10px 20px;
     text-align: center;
     border-radius: 2rem;
     grid-column: 1 / 2;
@@ -276,6 +288,10 @@ h2 {
 .container-eachProduct img {
     width: 255px;
     border-radius: 2rem;
+}
+
+.form-login {
+    box-shadow: 9px -2px 26px -6px rgba(84, 84, 84, 1);  
 }
 
 footer {
