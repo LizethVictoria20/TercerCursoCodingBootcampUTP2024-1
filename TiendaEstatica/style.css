@@ -184,7 +184,9 @@ h2 {
     grid-gap: 10px;
     margin-top: 7rem;
     gap: 72px;
+    margin-left: 12rem;
 }
+
 
 .container-eachProduct {
     width: 40rem;
