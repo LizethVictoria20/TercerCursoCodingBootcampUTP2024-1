@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+}
+header {
+    display: flex;
+    background-color: white;
+}
+
+.logo {
+    padding: 1rem;
+}
+
+.description {
+    background-color: #eaf9f6;
+    padding: 1rem;
+    border-radius: .5rem;
+}
+
+.description h1 {
+    color: #6ea49d;
+}
+
+.main-container {
+    background-image: url(./img/background.png);
+    background-image: url(./img/estrellas-bg.png);
+    background-color: #efd389;
+    padding-top: 4rem;
+    height: 100vh;
+}
+
+/* CARDS */
+.container-containerCards {
+    display: flex;
+    justify-content: center; 
+}
+
+.card {
+    background-image: url(./img/tarjeta_cubierta.png);
+    width: 10rem;
+    height: 10rem;
+    border-radius: 1.5rem;
+}
