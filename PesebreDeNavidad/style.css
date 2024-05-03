@@ -29,7 +29,7 @@ header {
 }
 
 /* CARDS */
-.container-containerCards {
+/* .container-containerCards {
     display: flex;
     justify-content: center; 
 }
@@ -39,4 +39,39 @@ header {
     width: 10rem;
     height: 10rem;
     border-radius: 1.5rem;
+} */
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
 }
+
+.main-container .flip-card {
+    width: 15rem;
+    height: 17rem;
+    perspective: 1000px;
+}
+
+.main-container .flip-card .flip-inner {
+    position: relative;
+    text-align: center;
+    transition: transform 1s ease-in-out;
+    transform-style: preserve-3d;
+}
+
+.main-container .flip-card:hover .flip-inner {
+    transform: rotateY(180deg);
+}
+
+.main-container .flip-card .card-front,
+.main-container .flip-card .card-back  {
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+
+.main-container .flip-card .card-back {
+    transform: rotateY(180deg);
+}
+
