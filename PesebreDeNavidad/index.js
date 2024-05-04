@@ -1,3 +1,38 @@
+function ImgList(){
+    let img = [];
+    let images = [
+        './img/parejas-001.png',
+        './img/parejas-001.png',
+        './img/parejas-002.png',
+        './img/parejas-002.png',
+        './img/parejas-003.png',
+        './img/parejas-003.png',
+        './img/parejas-004.png',
+        './img/parejas-004.png',
+        './img/parejas-005.png',
+        './img/parejas-005.png',
+        './img/parejas-006.png',
+        './img/parejas-006.png',
+        './img/parejas-007.png',
+        './img/parejas-007.png',
+        './img/parejas-008.png',
+        './img/parejas-008.png', 
+    ]
+    let randomImg = images[Math.floor(Math.random() * images.length)];
+    let filterImg = images.filter(value => value === randomImg)
+    if(filterImg.length < 2) {
+        img.push(randomImg)
+    }
+    for (let i = 0; i < filterImg.length; i++) {
+        const element = filterImg[i];
+        console.log(element)
+        return element
+        
+    }
+}
+
+ImgList()
+
 function createCards(){
     for(let i = 0; i < 4; i++){
         // Main container
@@ -26,7 +61,7 @@ function createCards(){
         cardFlipInner.appendChild(backCard)
     
         let backImg = document.createElement('img');
-        backImg.setAttribute('src', './img/parejas-001.png');
+        backImg.setAttribute('src', ImgList());
         backCard.appendChild(backImg);
     }
 }
