@@ -2,33 +2,23 @@ function ImgList(){
     let img = [];
     let images = [
         './img/parejas-001.png',
-        './img/parejas-001.png',
-        './img/parejas-002.png',
         './img/parejas-002.png',
         './img/parejas-003.png',
-        './img/parejas-003.png',
-        './img/parejas-004.png',
         './img/parejas-004.png',
         './img/parejas-005.png',
-        './img/parejas-005.png',
         './img/parejas-006.png',
-        './img/parejas-006.png',
-        './img/parejas-007.png',
         './img/parejas-007.png',
         './img/parejas-008.png',
-        './img/parejas-008.png', 
     ]
-    let randomImg = images[Math.floor(Math.random() * images.length)];
-    let filterImg = images.filter(value => value === randomImg)
-    if(filterImg.length < 2) {
-        img.push(randomImg)
+    for (let i = images.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [images[i], images[j]] = [images[j], images[i]];
     }
-    for (let i = 0; i < filterImg.length; i++) {
-        const element = filterImg[i];
-        console.log(element)
-        return element
+    for (let j = 0; j < images.length; j++) {
+        return images[j]
         
     }
+
 }
 
 ImgList()
@@ -43,8 +33,8 @@ function createCards(){
     
         let cardFlipInner = document.createElement('div');
         cardFlipInner.classList.add('flip-inner');
+        cardFlipInner.setAttribute('id', 'flip-inner' )
         containerCards.appendChild(cardFlipInner);
-    
     
         // Front card
         let frontCard = document.createElement('div');
@@ -63,6 +53,14 @@ function createCards(){
         let backImg = document.createElement('img');
         backImg.setAttribute('src', ImgList());
         backCard.appendChild(backImg);
+
+        cardFlipInner.addEventListener('click', function () {
+            containerCards.classList.add('disable-hover'); // Deshabilita el hover
+            setTimeout(() => {
+                containerCards.classList.remove('disable-hover'); // Deshabilita el hover
+
+            }, 4000);
+        });
     }
 }
 
@@ -75,3 +73,4 @@ function createRows(){
 }
 
 createRows()
+
