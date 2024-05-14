@@ -51,9 +51,9 @@ INSERT INTO Productos (IDProducto, NombreProducto, Descripcion, Precio, Stock) V
 
 CREATE TABLE Proveedores (
     IDProveedor INT (10) not null,
-    NombreProveedor VARCHAR (20),
-    Direccion VARCHAR (20),
-    Email VARCHAR(20),
+    NombreProveedor VARCHAR (30),
+    Direccion VARCHAR (40),
+    Email VARCHAR(40),
     PRIMARY KEY (IDProveedor)
 );
 
@@ -150,16 +150,44 @@ INSERT INTO Ventas (IDVenta, FechaVenta, IDCliente,IDProducto, NombreProducto, C
 VALUES (13, '2024-05-11', 1, 1, 'Producto A', 2),
         (14, '2024-05-12', 2, 2, 'Producto B', 2);
 
--- Actualizar el stock del producto
-UPDATE Productos
-SET Stock = Stock - 2
-WHERE IDProducto = 1;
-
-
 -- Marca el final de la transacción actual. Si se ejecuta se da por hecho que la transacción interna se ejecutó correctamente
 COMMIT;
 
 
+-- Actualizar el stock del producto
+-- Stock es el nombre de una de las columnas definidas en la tabla de productos
+UPDATE Productos
+SET Stock = Stock - 2
+WHERE IDProducto = 1;
+
+UPDATE Productos
+SET Stock = Stock - 2
+WHERE IDProducto = 2;
 
 
 
+-- Agregar datos a la tabla de clientes
+INSERT INTO Clientes (Nombre, Apellido, IDCliente, NumeroProducto)
+VALUE ('Liz', 'Victoria', 11, 213);
+
+-- Agregar datos a la tabla de proveedores
+INSERT INTO Proveedores (IDProveedor, NombreProveedor, Email, Direccion)
+VALUE (11, 'Victoria Liz', 'contactoA@proveedor.com','Calle Feliz');
+
+-- Modificar datos de la tabla clientes
+UPDATE Clientes
+SET IDCliente = 12
+WHERE IDCliente = 11;
+
+-- Modificar datos de la tabla proveedores
+UPDATE Proveedores
+SET Direccion = 'Calle no tan Feliz'
+WHERE Direccion = 'Calle Feliz';
+
+-- Eliminar datos de la tabla de clientes
+DELETE FROM Clientes
+WHERE IDCliente = 12;
+
+-- Eliminar datos de la tabla de proveedores
+DELETE FROM Proveedores
+WHERE NombreProveedor = 'Victoria Liz';
