@@ -54,10 +54,10 @@ function createCards(){
         backImg.setAttribute('src', ImgList());
         backCard.appendChild(backImg);
 
-        cardFlipInner.addEventListener('click', function () {
+        backCard.addEventListener('click', function () {
             containerCards.classList.add('disable-hover'); // Deshabilita el hover
             setTimeout(() => {
-                containerCards.classList.remove('disable-hover'); // Deshabilita el hover
+                backCard.classList.remove('disable-hover'); // Deshabilita el hover
 
             }, 4000);
         });
@@ -73,4 +73,3 @@ function createRows(){
 }
 
 createRows()
-

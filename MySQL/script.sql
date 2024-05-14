@@ -1,11 +1,11 @@
-# Create database
+-- Create database
 CREATE DATABASE TiendaOnline;
 USE TiendaOnline;
 CREATE TABLE Clientes (
     Nombre VARCHAR (20),
     Apellido VARCHAR (20),
     IDCliente INT (10) not null,
-    PRIMARY KEY (ID),
+    PRIMARY KEY (IDCliente),
     NumeroProducto INT (10) not null
 );
 
@@ -23,7 +23,7 @@ VALUE
 ('Miguel', 'Flores', 10, 210);
 
 
-#Create table
+-- Create table
 
 CREATE TABLE Productos (
     IDProducto INT (10) not null,
@@ -34,7 +34,7 @@ CREATE TABLE Productos (
     PRIMARY KEY (IDProducto)
 );
 
-INSERT INTO productos (IDProducto, NombreProducto, Descripcion, Precio, Stock) VALUES
+INSERT INTO Productos (IDProducto, NombreProducto, Descripcion, Precio, Stock) VALUES
 (1, 'Producto A', 'Descripción del Producto A', 100000, 50),
 (2, 'Producto B', 'Descripción del Producto B', 150000, 30),
 (3, 'Producto C', 'Descripción del Producto C', 200000, 20),
@@ -70,13 +70,96 @@ INSERT INTO Proveedores (IDProveedor, NombreProveedor, Email, Direccion) VALUES
 (10,'Elena Sánchez', 'contactoJ@proveedor.com', 'Calle Estrecha 909');
 
 
-
 CREATE TABLE Ventas (
-IDVenta INT (10) not null,
-FechaVenta DATE,
-NombreCliente VARCHAR (20),
-NombreProducto VARCHAR (20),
-CantidadVendida INT (10),
-FOREIGN KEY (FKClientes) REFERENCES Clientes(IDCliente)
+    IDVenta INT(10) NOT NULL,
+    FechaVenta DATE,
+    IDCliente INT(10),
+    IDProducto INT(10),
+    NombreProducto VARCHAR(20),
+    CantidadVendida INT(10),
+    PRIMARY KEY (IDVenta),
+    FOREIGN KEY (IDCliente) REFERENCES Clientes(IDCliente),
+    FOREIGN KEY (IDProducto) REFERENCES Productos(IDProducto)
 );
+
+
+INSERT INTO Ventas (IDVenta, FechaVenta, IDCliente, IDProducto, NombreProducto, CantidadVendida) VALUES
+(1, '2024-05-01', 1, 1, 'Producto A', 3),
+(2, '2024-05-02', 2, 2, 'Producto B', 1),
+(3, '2024-05-03', 3, 3, 'Producto C', 2),
+(4, '2024-05-04', 4, 4, 'Producto D', 1),
+(5, '2024-05-05', 5, 5, 'Producto E', 4),
+(6, '2024-05-06', 6, 6, 'Producto F', 1),
+(7, '2024-05-07', 7, 7, 'Producto G', 3),
+(8, '2024-05-08', 8, 8, 'Producto H', 2),
+(9, '2024-05-09', 9, 9, 'Producto I', 1),
+(10, '2024-05-10', 10, 10, 'Producto J', 2),
+(11, '2024-05-10', 1, 11, 'Producto B', 5);
+
+
+
+-- Insertando datos en la tabla Ventas
+INSERT INTO Ventas (IDVenta, FechaVenta, IDCliente, IDProducto, NombreProducto, CantidadVendida) VALUES
+(1, '2024-05-01', 1, 1, 'Producto A', 5),
+(2, '2024-05-02', 2, 2, 'Producto B', 3),
+(3, '2024-05-03', 3, 3, 'Producto C', 10),
+(4, '2024-05-04', 4, 4, 'Producto D', 2),
+(5, '2024-05-05', 5, 5, 'Producto E', 7),
+(6, '2024-05-06', 6, 6, 'Producto F', 1),
+(7, '2024-05-07', 7, 7, 'Producto G', 4),
+(8, '2024-05-08', 8, 8, 'Producto H', 8),
+(9, '2024-05-09', 9, 9, 'Producto I', 6),
+(10, '2024-05-10', 10, 10, 'Producto J', 9);
+
+
+-- Consultar relación entre tablas
+SELECT
+    Ventas.IDVenta,
+    Ventas.FechaVenta,
+    Clientes.Nombre,
+    Clientes.Apellido,
+    Ventas.NombreProducto,
+    Ventas.CantidadVendida
+FROM
+    Ventas
+JOIN
+    Clientes
+WHERE
+    Clientes.IDCliente = 1
+ON
+    Ventas.IDCliente = Clientes.IDCliente;
+
+
+-- insert nueva compra
+INSERT INTO Ventas (IDVenta, FechaVenta, IDCliente, IDProducto, NombreProducto, CantidadVendida)
+VALUES (12, '2024-05-12', 2, 2, 'Producto B', 2);
+
+#Actualizar el stock de productos
+UPDATE Productos
+SET Stock = Stock - 2
+WHERE IDProducto = 2;
+
+
+-- Encapsulamiento de ordenes para asegurarnos de la integridad de datos
+START TRANSACTION;
+-- Se utiliza para una nueva transacción
+--  Permiten garantizar la integridad y consistencia de los datos en la base de datos
+
+-- Insertar una nueva venta
+INSERT INTO Ventas (IDVenta, FechaVenta, IDCliente,IDProducto, NombreProducto, CantidadVendida)
+VALUES (13, '2024-05-11', 1, 1, 'Producto A', 2),
+        (14, '2024-05-12', 2, 2, 'Producto B', 2);
+
+-- Actualizar el stock del producto
+UPDATE Productos
+SET Stock = Stock - 2
+WHERE IDProducto = 1;
+
+
+-- Marca el final de la transacción actual. Si se ejecuta se da por hecho que la transacción interna se ejecutó correctamente
+COMMIT;
+
+
+
+
 
