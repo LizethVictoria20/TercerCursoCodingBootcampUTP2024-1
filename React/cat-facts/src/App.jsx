@@ -1,21 +1,17 @@
-import { useState, useEffect } from "react";
+import { useGatito } from "./useGatito.js";
+import { useFact } from "./useFact.js";
+
 
 function App() {
-  const [data, setData] = useState(null);
 
-  useEffect(() => {
-    fetch('https://api.thecatapi.com/v1/images/search ')
-    .then((response) => response.json())
-    .then((data) => {
-      setData(data)
-      console.log(data[0].url)
-    } );
-  }, []);
-
+  const  { gatitos } = useGatito('https://api.thecatapi.com/v1/images/search');
+  const { facts } = useFact('https://catfact.ninja/fact');
   return (
     <div className="App">
       <h1>Little cats</h1>
-      <p>{ data?.map((gatitos) => (<img src={data[0].url} key={data.id} />)) }</p>
+      <div>{ gatitos?.map((gatito) => <img src={gatito.url} key={gatito.id} alt="" />)}</div>
+      
+      <p>{facts.fact}</p>
     </div>
   );
 }
