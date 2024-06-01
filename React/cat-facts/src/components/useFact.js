@@ -13,7 +13,10 @@ export function useFact(url) {
         return response.json();
       })
       .then(data => {
-        setFact(data.fact);
+        // Fact que retorna una la primera palabra
+        setFact(data.fact.split(" ")[0]);
+        // Fact retorna completo en la consola
+        console.log(data.fact)
       })
       .catch(error => {
         //Errores en obtener la imagen del gatito
