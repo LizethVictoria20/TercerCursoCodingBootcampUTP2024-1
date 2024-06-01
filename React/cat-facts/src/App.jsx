@@ -1,7 +1,7 @@
 import React from 'react';
-import { UseGatito } from "./useGatito.js";
-import { useFact } from "./useFact.js";
-import { Button } from "./button.jsx";
+import { UseGatito } from "./components/useGatito.js";
+import { useFact } from "./components/useFact.js";
+import { Button } from "./components/button.jsx";
 
 function App() {
   const { gatitos, fetchGatitos } = UseGatito('https://api.thecatapi.com/v1/images/search');
