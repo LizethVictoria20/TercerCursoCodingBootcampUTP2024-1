@@ -23,6 +23,7 @@ export function UseGatito(url) {
 
   useEffect(() => {
     fetchGatitos();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [url]);
 
   return { gatitos, fetchGatitos };
