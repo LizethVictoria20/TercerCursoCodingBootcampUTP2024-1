@@ -1,0 +1,17 @@
+.container-task {
+    background-color: white;
+    width: 31rem;
+    margin: auto;
+    border-radius: .5rem;
+    height: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    font-size: 1.5rem;
+}
+
+.completed {
+    text-decoration: line-through;
+    background-color: #466F4F;
+}
