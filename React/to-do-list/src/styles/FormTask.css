@@ -1,0 +1,38 @@
+form {
+    margin-bottom: 2rem;
+    display: flex;
+}
+
+.input-task {
+    background-color: white;
+    width: 31rem;
+    margin: auto;
+    border-radius: .5rem;
+    height: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    font-size: 1.5rem;
+    border: none;
+    box-shadow: 7px 10px 26px -3px rgba(90,105,67,0.3);
+}
+
+::placeholder {
+    font-family: "Caveat", cursive;
+}
+
+button {
+    width: 9rem;
+    border-radius: .5rem;
+    border: none;
+    margin-left: .3rem;
+    cursor: pointer;
+    box-shadow: 7px 10px 26px -3px rgba(90,105,67,0.3);
+    font-family: "Caveat", cursive;
+    font-size: 1.3rem;
+}
+
+button:hover {
+    background-color: #F3F4E7;
+}
