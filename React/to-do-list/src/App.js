@@ -1,15 +1,16 @@
-import './App.css';
-import Task from './components/Task.jsx'
-import FormTask from './components/FormTask.jsx'
-
+import "./App.css";
+import TaskList from "./components/TaskList.jsx";
+// import Header from "./images/header.png";
 
 function App() {
   return (
     <div className="App">
-      <div className='container'>
+      {/* <div>
+        <img className='header' src={Header} alt="" />
+      </div> */}
+      <div className="container">
         <h1>To Do List</h1>
-        <FormTask />
-        <Task task='Ir a almorzar'/>
+        <TaskList />
       </div>
     </div>
   );

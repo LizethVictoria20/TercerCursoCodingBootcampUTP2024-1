@@ -1,10 +1,23 @@
 .container {
   background-color: #7D966A;
-  width: 34rem;
-  height: 40rem;
+  width: 48rem;
+  height: 31rem;
   border-radius: 1rem;
   margin: auto;
   text-align: center;
   padding: 1rem;
   box-shadow: 7px 10px 26px -3px rgba(90,105,67,0.3);
+}
+
+.header {
+  width: 100%;
+}
+
+footer {
+  height: 32px;
+  background: cadetblue;
+  text-align: center;
+  margin: auto;
+  padding-top: 19px;
+  margin-top: 50px;
 }
