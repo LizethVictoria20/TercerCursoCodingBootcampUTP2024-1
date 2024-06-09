@@ -2,6 +2,7 @@
     background-color: white;
     width: 28rem;
     margin: auto;
+    margin-bottom: 10px;
     border-radius: .5rem;
     height: 3rem;
     display: flex;
@@ -10,6 +11,22 @@
     padding: 0 15px;
     font-size: 1.5rem;
     box-shadow: 7px 10px 26px -3px rgba(90,105,67,0.3);
+}
+
+.container-task:nth-child(3n + 1) {
+    background-color: #4d653b;
+    
+    
+}
+
+.container-task:nth-child(3n + 2) {
+    background-color: #466F4F;
+    
+}
+
+.container-task:nth-child(3n + 3) {
+    background-color: #B1D8B7;
+    
 }
 
 .completed {
