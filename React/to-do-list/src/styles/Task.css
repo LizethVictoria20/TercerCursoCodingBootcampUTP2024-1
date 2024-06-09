@@ -10,7 +10,8 @@
     align-items: center;
     padding: 0 15px;
     font-size: 1.5rem;
-    box-shadow: 7px 10px 26px -3px rgba(90,105,67,0.3);
+    box-shadow: 7px 10px 72px 36px rgba(108,122,84,1);
+
 }
 
 .container-task:nth-child(3n + 1) {
