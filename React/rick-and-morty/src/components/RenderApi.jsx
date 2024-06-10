@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
-import Card  from "./Cards.jsx";
+import Card from "./Cards.jsx";
 
 function RenderAPI() {
   const [characters, setCharacters] = useState([]);
 
-  const fetchCharacters = () => {
-    fetch("https://rickandmortyapi.com/api/character")
+  const apiCharacters = "https://rickandmortyapi.com/api/character";
+
+  const fetchCharacters = (url) => {
+    fetch(url)
       .then((res) => res.json())
       .then((res) => {
         setCharacters(res.results);
@@ -15,17 +17,25 @@ function RenderAPI() {
       });
   };
 
+  const alterEgo = () => {};
+  //Tomando iinformacion del alter ego
+  // eslint-disable-next-line array-callback-return
+  characters.map((character) => {
+    const splitName = character.name.split(" ")[0];
+    const urlAlter = `${apiCharacters}?name=${splitName}`;
+    console.log(urlAlter);
+  });
+
   //Le decimos que se renderice una unica vez
   useEffect(() => {
-    fetchCharacters();
+    fetchCharacters(apiCharacters);
   }, []);
 
   return (
-    <div>
-        <Card characters={characters} />
-        <div>Hlis</div>
-    </div>
-  )
+    <>
+      <Card characters={characters} />
+    </>
+  );
 }
 
 export default RenderAPI;
