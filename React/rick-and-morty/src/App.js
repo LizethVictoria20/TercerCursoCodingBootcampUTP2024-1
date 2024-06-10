@@ -1,6 +1,7 @@
 import "./App.css";
 import RenderAPI from "./components/RenderApi.jsx";
-// import Cards from "./components/Cards.jsx";
+import Cards from "./components/Cards.jsx";
+// import AlterEgoRender from "./components/AlterEgoRender.jsx";
 
 function App() {
   return (

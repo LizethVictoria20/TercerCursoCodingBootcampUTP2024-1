@@ -1,10 +1,9 @@
-import { RenderAPI } from './RenderApi.jsx';
 import '../styles/Card.css';
 
 
-function Cards({ characters, alter }){
-    console.log(alter)
+function Cards({ characters  }){
   return (
+
     <div className='container'>
         {
             characters?.map((character) => 
