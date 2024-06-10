@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
-import AlterEgo from "./AlterEgoRender.jsx";
 import Card from "./Cards.jsx";
 
 function RenderAPI() {
   const [characters, setCharacters] = useState([]);
   const apiCharacters = "https://rickandmortyapi.com/api/character";
-
+  let imgAlterEgo;
   const fetchCharacters = (url) => {
     fetch(url)
       .then((res) => res.json())
@@ -14,21 +13,24 @@ function RenderAPI() {
 
         // eslint-disable-next-line array-callback-return
         characters.map((data) => {
-          console.log("Img 1", data.image);
+          // console.log("Img 1", data.image);
 
+          // separando el nombre de los personajes para concatenarlo a la API
           const splitName = data.name.split(" ")[0];
           const urlAlterEgo = `${apiCharacters}?name=${splitName}`;
 
+          //Haciendo fetch de la segunda API
           fetch(urlAlterEgo)
             .then((res) => res.json())
             .then((res) => {
-              if (res.results.length > 1) {
-                console.log("Img 2", res.results[1].image);
+              const alterEgo = res.results;
+              if (alterEgo.length > 1) {
+                imgAlterEgo = res.results[1].image;
               }
             });
         });
 
-        setCharacters(res.results);
+        setCharacters(characters);
       })
       .catch((error) => {
         console.log(`Hubo un problema con la petición Fetch: ${error.message}`);
@@ -39,10 +41,10 @@ function RenderAPI() {
   useEffect(() => {
     fetchCharacters(apiCharacters);
   }, []);
-
+  console.log(imgAlterEgo);
   return (
     <>
-      <Card characters={characters} />
+      <Card characters={characters} alterEgo={imgAlterEgo} />
     </>
   );
 }
