@@ -11,15 +11,21 @@ function RenderAPI() {
       .then((res) => res.json())
       .then((res) => {
         const characters = res.results;
+
         // eslint-disable-next-line array-callback-return
         characters.map((data) => {
-          const splitName = data.name.split(" ")[0];
+          console.log("Img 1", data.image);
 
+          const splitName = data.name.split(" ")[0];
           const urlAlterEgo = `${apiCharacters}?name=${splitName}`;
 
           fetch(urlAlterEgo)
             .then((res) => res.json())
-            .then((res) => {});
+            .then((res) => {
+              if (res.results.length > 1) {
+                console.log("Img 2", res.results[1].image);
+              }
+            });
         });
 
         setCharacters(res.results);
