@@ -1,14 +1,19 @@
 // Cards.jsx
 import React from "react";
+import '../styles/Card.css'
 
-const Card = ({ characters, alterEgo }) => {
+const Card = ({ characters, alterEgo, isAlive }) => {
   return (
-    <div>
+    <div className='container'>
       {characters.map(character => (
-        <div key={character.id}>
-          <h2>{character.name}</h2>
+        <div key={character.id} className='container-character'>
           <img src={character.image} alt={character.name} />
           <img src={alterEgo[character.id]} alt={`${character.name} alter ego`} />
+          <div>
+            <h2>{character.name}</h2>
+            <p >{character.species}</p>
+          </div>
+         
         </div>
       ))}
     </div>

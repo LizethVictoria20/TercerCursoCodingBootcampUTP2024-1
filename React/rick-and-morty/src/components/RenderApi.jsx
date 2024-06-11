@@ -14,6 +14,7 @@ function RenderAPI() {
         setCharacters(characters);
 
         // Fetch alter ego images for each character
+        // eslint-disable-next-line array-callback-return
         characters.map((data) => {
           const splitName = data.name.split(" ")[0];
           const urlAlterEgo = `${apiCharacters}?name=${splitName}`;
