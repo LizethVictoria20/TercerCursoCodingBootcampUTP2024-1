@@ -1,21 +1,18 @@
-import '../styles/Card.css';
+// Cards.jsx
+import React from "react";
 
-
-function Cards({ characters, alterEgo  }){
+const Card = ({ characters, alterEgo }) => {
   return (
-
-    <div className='container'>
-      {
-        characters?.map((character) => 
-        
-        <div className='container-character' key={character.id}>
-        <img src={character.image} alt="" />
-        <p >{character.name}</p>
+    <div>
+      {characters.map(character => (
+        <div key={character.id}>
+          <h2>{character.name}</h2>
+          <img src={character.image} alt={character.name} />
+          <img src={alterEgo[character.id]} alt={`${character.name} Alter Ego`} />
         </div>
-        )
-      }
+      ))}
     </div>
-  )
-}
+  );
+};
 
-export default Cards;
+export default Card;

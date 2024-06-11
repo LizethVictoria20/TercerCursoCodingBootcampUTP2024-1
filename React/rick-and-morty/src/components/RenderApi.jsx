@@ -3,48 +3,59 @@ import Card from "./Cards.jsx";
 
 function RenderAPI() {
   const [characters, setCharacters] = useState([]);
+  const [alterEgo, setAlterEgo] = useState({});
   const apiCharacters = "https://rickandmortyapi.com/api/character";
-  let imgAlterEgo;
+
   const fetchCharacters = (url) => {
     fetch(url)
       .then((res) => res.json())
       .then((res) => {
         const characters = res.results;
+        setCharacters(characters);
 
-        // eslint-disable-next-line array-callback-return
+        // Fetch alter ego images for each character
         characters.map((data) => {
-          // console.log("Img 1", data.image);
-
-          // separando el nombre de los personajes para concatenarlo a la API
           const splitName = data.name.split(" ")[0];
           const urlAlterEgo = `${apiCharacters}?name=${splitName}`;
+          //https://rickandmortyapi.com/api/character?name=Morty
 
-          //Haciendo fetch de la segunda API
           fetch(urlAlterEgo)
             .then((res) => res.json())
             .then((res) => {
               const alterEgo = res.results;
+              console.log(res.results);
               if (alterEgo.length > 1) {
-                imgAlterEgo = res.results[1].image;
+                setAlterEgo((beforeState) => ({
+                  //spread operator - Copia todas las propiedades del estado anterior en un nuevo objeto.
+                  ...beforeState,
+                  //Toma el key and value del objeto
+                  [data.id]: alterEgo[1].image,
+                }));
+              } else {
+                setAlterEgo((beforeState) => ({
+                  ...beforeState,
+                  //Si ese objeto no tiene imagen presente en la API del alter ego
+                  [data.id]: null,
+                }));
               }
+            })
+            .catch((error) => {
+              console.log(`Could not render the API: ${error.message}`);
             });
         });
-
-        setCharacters(characters);
       })
       .catch((error) => {
-        console.log(`Hubo un problema con la petición Fetch: ${error.message}`);
+        console.log(`Could not render the API: ${error.message}`);
       });
   };
 
-  //Le decimos que se renderice una unica vez
   useEffect(() => {
     fetchCharacters(apiCharacters);
   }, []);
-  console.log(imgAlterEgo);
+
   return (
     <>
-      <Card characters={characters} alterEgo={imgAlterEgo} />
+      <Card characters={characters} alterEgo={alterEgo} />
     </>
   );
 }
