@@ -23,7 +23,6 @@ function RenderAPI() {
             .then((res) => res.json())
             .then((res) => {
               const alterEgo = res.results;
-              console.log(res.results);
               if (alterEgo.length > 1) {
                 setAlterEgo((beforeState) => ({
                   //spread operator - Copia todas las propiedades del estado anterior en un nuevo objeto.

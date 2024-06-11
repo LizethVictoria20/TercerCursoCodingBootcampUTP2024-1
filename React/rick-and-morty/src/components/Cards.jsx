@@ -8,7 +8,7 @@ const Card = ({ characters, alterEgo }) => {
         <div key={character.id}>
           <h2>{character.name}</h2>
           <img src={character.image} alt={character.name} />
-          <img src={alterEgo[character.id]} alt={`${character.name} Alter Ego`} />
+          <img src={alterEgo[character.id]} alt={`${character.name} alter ego`} />
         </div>
       ))}
     </div>
