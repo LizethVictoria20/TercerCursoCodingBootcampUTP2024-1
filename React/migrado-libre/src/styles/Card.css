@@ -1,0 +1,32 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 2rem;
+    row-gap: 2rem;
+}
+
+.container-app {
+    margin: 5rem;
+}
+
+.Logo {
+    display: grid;
+    justify-content: center;
+    margin: 3rem;
+}
+
+.card {
+    width: 18rem;
+    height: 22rem;
+    border-radius: 1rem;
+    text-align: center;
+    box-shadow: 10px 4px 43px -19px rgba(128,23,128,0.63);
+    cursor: pointer;
+
+}
+
+.card img {
+    width: 6rem;
+}
