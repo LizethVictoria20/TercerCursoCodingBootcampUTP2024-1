@@ -9,20 +9,23 @@ function RenderAPI() {
     "https://api.mercadolibre.com/sites/MLA/search?seller_id=179571326";
   const categoryURL = "https://api.mercadolibre.com/sites/MLA/categories";
 
-  const fetchAPISeller = (URL) => {
-    fetch(URL)
+  const fetchAPISeller = (url) => {
+    fetch(url)
       .then((res) => res.json())
       .then((res) => {
         const products = res.results;
         setProduct(products);
-      });
+      })
+      .catch((error) => console.error("API not found", error));
   };
+
   const apiFetchCategories = (url) => {
     fetch(url)
       .then((res) => res.json())
-      .then((res) => {
-        setCategory(res);
-      });
+      .then((data) => {
+        setCategory(data);
+      })
+      .catch((error) => console.error("API not found", error));
   };
 
   useEffect(() => {
