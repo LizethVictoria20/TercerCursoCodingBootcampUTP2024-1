@@ -9,6 +9,7 @@ function RenderAPI() {
     .then((res) => res.json())
     .then((res) => {
       const products = res.results
+      console.log(products)
       setProduct(products)
     })
   }

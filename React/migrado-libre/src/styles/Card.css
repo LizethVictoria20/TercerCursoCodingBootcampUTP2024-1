@@ -1,32 +1,15 @@
 .container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    column-gap: 2rem;
-    row-gap: 2rem;
-}
-
-.container-app {
-    margin: 5rem;
-}
-
-.Logo {
     display: grid;
-    justify-content: center;
-    margin: 3rem;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1rem;
+    row-gap: 1rem;
 }
 
-.card {
-    width: 18rem;
-    height: 22rem;
+.container-product {
+    background: #f3f3f3;
     border-radius: 1rem;
+    width: 27rem;
+    height: 20rem;
+    padding: 1rem;
     text-align: center;
-    box-shadow: 10px 4px 43px -19px rgba(128,23,128,0.63);
-    cursor: pointer;
-
-}
-
-.card img {
-    width: 6rem;
 }

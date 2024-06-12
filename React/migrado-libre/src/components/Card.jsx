@@ -1,12 +1,19 @@
+import "../styles/Card.css";
 
-function Card(products ) {
+function Card({products}) {
     return (
-        <div>
+        <div className='container'>
             {
-                products.products.map((data) => console.log(data))
+                products.map((data) => (
+                        <div className="container-product" key={data.id}>
+                            <h3>{data.title}</h3>
+                            <img src={data.thumbnail} alt="Product" />
+                        </div>
+                ))
             }
         </div>
     )
 }
 
 export default Card;
+
