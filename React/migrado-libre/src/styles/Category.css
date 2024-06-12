@@ -3,4 +3,5 @@
     width: 15rem;
     margin: auto;
     height: 100%;
+    grid-column-start: 1;
 }

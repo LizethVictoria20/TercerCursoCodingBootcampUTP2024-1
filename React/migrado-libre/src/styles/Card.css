@@ -1,6 +1,6 @@
 .container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     column-gap: 1rem;
     row-gap: 1rem;
     grid-column-start: 2;
@@ -9,7 +9,7 @@
 .container-product {
     background: #f3f3f3;
     border-radius: 1rem;
-    width: 27rem;
+    width: 15rem;
     height: 20rem;
     padding: 1rem;
     text-align: center;
