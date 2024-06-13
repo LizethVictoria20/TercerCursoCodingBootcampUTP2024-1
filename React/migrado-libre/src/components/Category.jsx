@@ -42,7 +42,7 @@ function Category() {
           {openCategories[category.id] && (
             <SubCategories
               subCategory={category.id}
-              isOpen={category[category.id]}
+              isOpen={openCategories[category.id]}
             />
           )}
         </div>
