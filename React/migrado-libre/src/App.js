@@ -1,13 +1,14 @@
 import "./App.css";
 import RenderAPI from "./components/RenderAPI.jsx";
 import Category from "./components/Category.jsx";
-import Menu from "./components/Menu.jsx";
+import SubCategories from "./components/SubCategories.jsx";
 
 function App() {
   return (
     <div className="App">
       <Category />
       <RenderAPI />
+      <SubCategories />
     </div>
   );
 }
