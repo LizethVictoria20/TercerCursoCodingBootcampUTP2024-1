@@ -31,7 +31,6 @@ function Category() {
     <div>
       {categories.map((category) => (
         <div key={category.id}>
-          <SubCategories subCategory={category.id} />
           <button onClick={() => Menu(category.id)}>
             {openCategories[category.id] ? (
               <CiCircleChevUp />
@@ -41,7 +40,10 @@ function Category() {
           </button>
           <span>{category.name}</span>
           {openCategories[category.id] && (
-            <SubCategories subCategory={category.id} />
+            <SubCategories
+              subCategory={category.id}
+              isOpen={category[category.id]}
+            />
           )}
         </div>
       ))}

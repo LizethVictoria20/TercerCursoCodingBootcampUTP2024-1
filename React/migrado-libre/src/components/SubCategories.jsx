@@ -1,31 +1,34 @@
 import { useState, useEffect } from "react";
 
-function SubCategories({ subCategory }) {
+function SubCategories({ subCategory, isOpen }) {
   const [subCate, setSubCate] = useState([]);
   const urlCategories = "https://api.mercadolibre.com/categories/";
   const urlSubCategories = `${urlCategories}${subCategory}`;
   const fetchAPI = (url) => {
     if (subCategory !== undefined) {
-      fetch(url)
+      if(isOpen) {
+        fetch(url)
         .then((res) => res.json())
         .then((res) => {
           const childrens = res.children_categories;
           setSubCate(childrens);
         })
-
         .catch((error) => console.log(error));
+      }
+
     }
   };
 
   useEffect(() => {
     fetchAPI(urlSubCategories);
-  });
+  }, []);
+
   return (
-    <div>
-      {subCate.map((data) => {
-        return <p>{data.name}</p>;
-      })}
-    </div>
+    <ul>
+      {subCate.map((data) => (
+        <li key={data.id}>{data.name}</li>
+      ))}
+    </ul>
   );
 }
 
