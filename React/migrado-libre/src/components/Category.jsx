@@ -1,54 +1,54 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
+import { CiCircleChevDown, CiCircleChevUp } from "react-icons/ci";
 
 function Category() {
-  const categoryURL = 'https://api.mercadolibre.com/sites/MLA/categories';
+  const categoryURL = "https://api.mercadolibre.com/sites/MLA/categories";
   const [categories, setCategories] = useState([]);
-  const [watchCategories, setwatchCategories] = useState({});
-
-  const apiFetchCategories = (url) => {
-    fetch(url)
-      .then((res) => res.json())
-      .then((data) => {
-        setCategories(data);
-      })
-      .catch((error) => console.error('API not found', error));
-  };
+  const [openCategories, setOpenCategories] = useState({});
 
   useEffect(() => {
-    apiFetchCategories(categoryURL);
+    fetch(categoryURL)
+      .then((res) => res.json())
+      .then((data) => setCategories(data))
+      .catch((error) => console.error("API not found", error));
   }, []);
 
+  const Menu = (id) => {
+    // Creo una copia
+    const openCategory = { ...openCategories };
+    //saber si mi categoria está abierta :)
+    if (openCategory[id]) {
+      delete openCategory[id];
+    } else {
+      openCategory[id] = true;
+    }
+    // Update el estado -_-
+    setOpenCategories(openCategory);
+  };
 
-    //Menú desplegable
-    const menuCategories = (id) => {
-        setwatchCategories((beforeState) => ({
-            //Copia todas las propiedades del estado anterior
-            ...beforeState,
-            [id]: !beforeState[id]
-            //Cambia el valor del estado
-        }))
-    } 
-
-
-    return (
-        <div>
-            {categories.map((category) => (
-            <div key={category.id}>
-                <button onClick={() => menuCategories(category.id)}>
-                {watchCategories[category.id] ? '-' : '+'}
-                </button>
-                <span>{category.name}</span>
-                {watchCategories[category.id] && (
-                <ul>
-                    <li>Subcategory 1</li>
-                    <li>Subcategory 2</li>
-                    <li>Subcategory 3</li>
-                </ul>
-                )}
-            </div>
-            ))}
+  return (
+    <div>
+      {categories.map((category) => (
+        <div key={category.id}>
+          <button onClick={() => Menu(category.id)}>
+            {openCategories[category.id] ? (
+              <CiCircleChevUp />
+            ) : (
+              <CiCircleChevDown />
+            )}
+          </button>
+          <span>{category.name}</span>
+          {openCategories[category.id] && (
+            <ul>
+              <li>Subcategory 1</li>
+              <li>Subcategory 2</li>
+              <li>Subcategory 3</li>
+            </ul>
+          )}
         </div>
-);
+      ))}
+    </div>
+  );
 }
 
 export default Category;
