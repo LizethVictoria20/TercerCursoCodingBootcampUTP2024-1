@@ -1,6 +1,7 @@
 import "./App.css";
 import RenderAPI from "./components/RenderAPI.jsx";
 import Category from "./components/Category.jsx";
+import Menu from "./components/Menu.jsx";
 
 function App() {
   return (

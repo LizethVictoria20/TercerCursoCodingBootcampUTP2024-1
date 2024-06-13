@@ -6,7 +6,7 @@ function Card({ products }) {
       {products.map((data) => (
         <div className="container-product" key={data.id}>
           <h3>{data.title}</h3>
-          <p>${data.original_price}</p>
+          <p>${data.price}</p>
           <img src={data.thumbnail} alt="Product" />
         </div>
       ))}
