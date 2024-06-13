@@ -7,10 +7,15 @@
 }
 
 .container-product {
-    background: #f3f3f3;
+    background: white;
     border-radius: 1rem;
     width: 15rem;
     height: 20rem;
     padding: 1rem;
     text-align: center;
+    box-shadow: 10px -14px 21px 2px rgba(204,204,204,1);
+}
+
+.container-product a {
+    text-decoration: none;
 }

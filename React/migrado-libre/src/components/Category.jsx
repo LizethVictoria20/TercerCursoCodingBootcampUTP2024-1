@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "../styles/Category.css";
 import { CiCircleChevDown, CiCircleChevUp } from "react-icons/ci";
 import SubCategories from "./SubMenu.jsx";
 
@@ -30,7 +31,7 @@ function Category() {
   return (
     <div>
       {categories.map((category) => (
-        <div key={category.id}>
+        <div key={category.id} className="-">
           <button onClick={() => Menu(category.id)}>
             {openCategories[category.id] ? (
               <CiCircleChevUp />
