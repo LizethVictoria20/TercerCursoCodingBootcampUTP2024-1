@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { CiCircleChevDown, CiCircleChevUp } from "react-icons/ci";
+import SubCategories from "./SubCategories.jsx";
 
 function Category() {
   const categoryURL = "https://api.mercadolibre.com/sites/MLA/categories";
@@ -30,6 +31,7 @@ function Category() {
     <div>
       {categories.map((category) => (
         <div key={category.id}>
+          <SubCategories subCategory={category.id} />
           <button onClick={() => Menu(category.id)}>
             {openCategories[category.id] ? (
               <CiCircleChevUp />
@@ -39,11 +41,7 @@ function Category() {
           </button>
           <span>{category.name}</span>
           {openCategories[category.id] && (
-            <ul>
-              <li>Subcategory 1</li>
-              <li>Subcategory 2</li>
-              <li>Subcategory 3</li>
-            </ul>
+            <SubCategories subCategory={category.id} />
           )}
         </div>
       ))}
