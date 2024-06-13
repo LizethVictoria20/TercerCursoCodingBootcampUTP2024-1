@@ -1,7 +1,7 @@
 import "./App.css";
 import RenderAPI from "./components/RenderAPI.jsx";
 import Category from "./components/Category.jsx";
-import SubCategories from "./components/SubCategories.jsx";
+import SubCategories from "./components/SubMenu.jsx";
 
 function App() {
   return (

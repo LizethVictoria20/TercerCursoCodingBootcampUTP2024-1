@@ -5,7 +5,9 @@ function Card({ products }) {
     <div className="container">
       {products.map((data) => (
         <div className="container-product" key={data.id}>
-          <h3>{data.title}</h3>
+          <a href={data.permalink} target="_blank" rel="noreferrer">
+            {data.title}
+          </a>
           <p>${data.price}</p>
           <img src={data.thumbnail} alt="Product" />
         </div>

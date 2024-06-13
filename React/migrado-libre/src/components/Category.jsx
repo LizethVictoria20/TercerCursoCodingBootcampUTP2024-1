@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { CiCircleChevDown, CiCircleChevUp } from "react-icons/ci";
-import SubCategories from "./SubCategories.jsx";
+import SubCategories from "./SubMenu.jsx";
 
 function Category() {
   const categoryURL = "https://api.mercadolibre.com/sites/MLA/categories";
@@ -38,7 +38,7 @@ function Category() {
               <CiCircleChevDown />
             )}
           </button>
-          <span>{category.name}</span>
+          <a href="google.com">{category.name}</a>
           {openCategories[category.id] && (
             <SubCategories
               subCategory={category.id}
