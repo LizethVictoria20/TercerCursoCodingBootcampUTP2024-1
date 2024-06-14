@@ -5,7 +5,9 @@ import SubCategories from "./components/SubMenu.jsx";
 
 function App() {
   return (
+    
     <div className="App">
+
       <Category />
       <RenderAPI />
       <SubCategories />
