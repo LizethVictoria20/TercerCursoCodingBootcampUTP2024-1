@@ -6,8 +6,13 @@ import { Persona } from '../persona'
   styleUrl: './contador.component.css'
 })
 export class ContadorComponent {
-  persona:Persona = {
-    nombre: 'Liz',
-    edad: 34
-  }
+ number:number = 1
+
+
+ aumentar() {
+  this.number++
+ }
+ disminuir() {
+  this.number--
+ }
 }
