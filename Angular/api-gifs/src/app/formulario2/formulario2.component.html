@@ -7,7 +7,10 @@
         name="nombre"
         placeholder="Ingrese el nomnbre"
         [(ngModel)]="persona.nombre"
+        required
+        #name="ngModel"
       />
+      <div [hidden]="name.valid || name.pristine">Campo obligatorio</div>
     </div>
     <div>
       <label>Edad</label>
@@ -16,10 +19,15 @@
         name="edad"
         placeholder="Ingrese el edad"
         [(ngModel)]="persona.edad"
+        required
+        #edad="ngModel"
       />
+      <div [hidden]="edad.valid || edad.pristine">Campo obligatorio</div>
     </div>
     <button>Enviar</button>
   </form>
 </div>
 
-{{ persona | json }}
+{{ name.errors | json }}
+<hr />
+{{ name.valid | json }}
