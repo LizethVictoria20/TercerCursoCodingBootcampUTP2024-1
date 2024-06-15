@@ -1,1 +1,4 @@
 <p>formulario works!</p>
+<input type="text" placeholder="Escribir..." #name />
+<button (click)="imprimirConsola(name.value)">Click me!</button>
+<p>{{ name.value }}</p>
