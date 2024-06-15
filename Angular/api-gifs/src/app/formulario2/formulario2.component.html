@@ -1,5 +1,5 @@
 <div>
-  <form (ngSubmit)="procesar()">
+  <form (ngSubmit)="procesar()" #formContact="ngForm">
     <div>
       <label>Nombre</label>
       <input
@@ -24,10 +24,6 @@
       />
       <div [hidden]="edad.valid || edad.pristine">Campo obligatorio</div>
     </div>
-    <button>Enviar</button>
+    <button [disabled]="formContact.invalid">Enviar</button>
   </form>
 </div>
-
-{{ name.errors | json }}
-<hr />
-{{ name.valid | json }}
