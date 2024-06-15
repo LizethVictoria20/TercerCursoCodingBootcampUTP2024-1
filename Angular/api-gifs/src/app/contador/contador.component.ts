@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Persona } from '../persona'
 
 @Component({
   selector: 'app-contador',
@@ -9,4 +10,8 @@ import { Component } from '@angular/core';
 })
 export class ContadorComponent {
 
+  persona:Persona = {
+    name: 'Liz',
+    age: 20,
+  }
 }
