@@ -1,6 +1,8 @@
-<button (click)="text_color = 'red'">Red</button>
-<button (click)="text_color = 'blue'">Blue</button>
-<button (click)="text_color = 'green'">Green</button>
+<button [disabled]="button_disable" (click)="text_color = 'red'">Red</button>
+<button [disabled]="button_disable" (click)="text_color = 'blue'">Blue</button>
+<button [disabled]="button_disable" (click)="text_color = 'green'">
+  Green
+</button>
 
 <p [ngStyle]="{ color: text_color }">Texto que va a cambiar de color</p>
 
