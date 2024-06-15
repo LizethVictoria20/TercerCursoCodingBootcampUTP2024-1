@@ -1,9 +1,19 @@
-<button [disabled]="button_disable" (click)="text_color = 'red'">Red</button>
-<button [disabled]="button_disable" (click)="text_color = 'blue'">Blue</button>
-<button [disabled]="button_disable" (click)="text_color = 'green'">
-  Green
+<button
+  (click)="
+    src =
+      'https://images.pexels.com/photos/18762266/pexels-photo-18762266/free-photo-of-two-young-sea-lions-crawling-on-a-beach.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load'
+  "
+>
+  Image 1
 </button>
 
-<p [ngStyle]="{ color: text_color }">Texto que va a cambiar de color</p>
+<button
+  (click)="
+    src =
+      'https://images.pexels.com/photos/15845935/pexels-photo-15845935/free-photo-of-deer-baby-walking-in-forest.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load'
+  "
+>
+  Image 2
+</button>
 
-<button (click)="button_disable = !button_disable">Activar/Desactivar</button>
+<img [src]="src" alt="" />

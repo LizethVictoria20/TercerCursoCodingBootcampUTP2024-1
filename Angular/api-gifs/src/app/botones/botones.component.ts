@@ -6,7 +6,5 @@ import { Component } from '@angular/core';
   styleUrl: './botones.component.css'
 })
 export class BotonesComponent {
-  text_color:string = '';
-
-  button_disable:boolean = true;
+ src:string = 'https://images.pexels.com/photos/19174731/pexels-photo-19174731/free-photo-of-frozen-water-surface.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load';
 }
