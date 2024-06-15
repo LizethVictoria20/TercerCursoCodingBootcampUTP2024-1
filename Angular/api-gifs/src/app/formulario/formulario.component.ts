@@ -6,7 +6,10 @@ import { Component } from '@angular/core';
   styleUrl: './formulario.component.css'
 })
 export class FormularioComponent {
+  isVisible:boolean = false;
+
   imprimirConsola(name:string) {
     console.log(name)
+    this.isVisible = true;
   }
 }
