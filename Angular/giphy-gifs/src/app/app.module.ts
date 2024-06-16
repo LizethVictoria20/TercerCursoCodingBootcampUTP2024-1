@@ -5,6 +5,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { SearchComponent } from './components/search/search.component';
 import { AppComponent } from './app.component';
 
+
+
 @NgModule({
   declarations: [
     AppComponent
@@ -13,6 +15,7 @@ import { AppComponent } from './app.component';
     CommonModule,
     ReactiveFormsModule,
     SearchComponent,
+
   ],
 
 })
