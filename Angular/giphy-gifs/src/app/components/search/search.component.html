@@ -1,12 +1,9 @@
 <div>
-  <input type="search" [formControl]="searchField" />
+  <input [formControl]="searchField" placeholder="Search GIFs" />
 </div>
-<p>
-  {{ searchField.value }}
-</p>
-
-<div>
+<div *ngIf="results.length > 0">
   <div *ngFor="let result of results">
-    <img [src]="result.url" alt="" />
+    <img [src]="result.url" alt="GIF" />
   </div>
 </div>
+<div *ngIf="results.length === 0 && searchField.value">No results found.</div>
