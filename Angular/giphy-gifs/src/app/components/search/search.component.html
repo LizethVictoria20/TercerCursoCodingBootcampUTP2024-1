@@ -1,9 +1,12 @@
 <div>
-  <input [formControl]="searchField" placeholder="Search GIFs" />
+  <input [formControl]="searchField" placeholder="" />
+  <button>Buscar</button>
 </div>
 <div *ngIf="results.length > 0">
   <div *ngFor="let result of results">
-    <img [src]="result.url" alt="GIF" />
+    <img [src]="result.url" alt="" />
   </div>
 </div>
-<div *ngIf="results.length === 0 && searchField.value">No results found.</div>
+<div *ngIf="results.length === 0 && searchField.value">
+  No se encontraron gifs
+</div>
