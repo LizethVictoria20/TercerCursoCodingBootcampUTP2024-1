@@ -3,7 +3,7 @@ import { FormControl } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
-import { map, debounceTime } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-search',
@@ -18,17 +18,18 @@ export class SearchComponent implements OnInit {
 
   constructor(private http: HttpClient) {}
 
-  ngOnInit(): void {
-    this.searchField.valueChanges
-    //Lo más lindoooo
-    .pipe(debounceTime(500))
-    .subscribe((value) => {
-      if (value) {
-        this.getData(value);
-      } else {
-        this.results = [];
-      }
-    });
+  ngOnInit(): void {}
+
+  onSearch(): void {
+    const value = this.searchField.value;
+    if (value) {
+      this.getData(value);
+    } else {
+      this.results = [];
+    }
+  }
+  clearResults(): void {
+    this.results = [];
   }
 
   private getData(query: string) {
