@@ -1,0 +1,17 @@
+<div>
+  <div>
+    <form>
+      <div>
+        <label>Nombre</label>
+        <input type="text" [formControl]="nombre" placeholder="Nombre" />
+      </div>
+      <div>
+        <label>Email</label>
+        <input type="email" [formControl]="email" placeholder="Email" />
+      </div>
+      <button>Enviar</button>
+    </form>
+  </div>
+</div>
+
+{{ nombre.value }}
