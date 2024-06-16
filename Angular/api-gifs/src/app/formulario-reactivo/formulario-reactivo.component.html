@@ -4,14 +4,19 @@
       <div>
         <label>Nombre</label>
         <input type="text" [formControl]="nombre" placeholder="Nombre" />
+        <p [hidden]="nombre.valid || nombre.pristine">Campo obligatorio</p>
       </div>
       <div>
         <label>Email</label>
         <input type="email" [formControl]="email" placeholder="Email" />
+        <span
+          *ngIf="email.errors?.['required']"
+          [hidden]="email.valid || email.pristine"
+          >Email obligatorio</span
+        >
+        <span *ngIf="email.errors?.['email']">Email válido</span>
       </div>
       <button>Enviar</button>
     </form>
   </div>
 </div>
-
-{{ nombre.value }}

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-formulario-reactivo',
@@ -7,7 +7,7 @@ import { FormControl } from '@angular/forms';
   styleUrl: './formulario-reactivo.component.css'
 })
 export class FormularioReactivoComponent {
-  nombre = new FormControl('');
-  email = new FormControl('');
+  nombre = new FormControl('', Validators.required);
+  email = new FormControl('', [Validators.required, Validators.email]);
 }
 
