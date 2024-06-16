@@ -12,6 +12,7 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   getData(): Observable<any> {
-    return this.http.get<any>(`https://api.giphy.com/v1/gifs/random?api_key=${this.api_key}`);
+    return this.http.get<any>(`api.giphy.com/v1/gifs/search?api_key=${this.api_key}&limit=10`)
+    
   }
 }
