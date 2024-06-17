@@ -18,7 +18,6 @@ export class SearchComponent implements OnInit {
   constructor(private apiRestService: ApiRestService) {}
 
   ngOnInit(): void {
-    console.log(this.apiRestService.saludo);
   }
 
   onSearch(): void {

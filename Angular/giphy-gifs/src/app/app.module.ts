@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SearchComponent } from './components/search/search.component';
 import { AppComponent } from './app.component';
-
+import { HistoryComponent } from './components/history/history.component';
 
 
 @NgModule({
@@ -15,6 +15,7 @@ import { AppComponent } from './app.component';
     CommonModule,
     ReactiveFormsModule,
     SearchComponent,
+    HistoryComponent
 
   ],
 

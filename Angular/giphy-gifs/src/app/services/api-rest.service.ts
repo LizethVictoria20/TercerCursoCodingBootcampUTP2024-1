@@ -8,15 +8,20 @@ import { map } from 'rxjs/operators';
 })
 export class ApiRestService {
 
-  constructor(private http: HttpClient) {}
+  constructor(private httpClient: HttpClient) {}
 
-  saludo = 'Hola!';
+  private historial: string[] = [];
+  
+  get listaHistorial() {
+    return [...this.historial];
+  }
 
   getGifs(query: string): Observable<any[]> {
+   this.historial.unshift(query);
     const api_key = '2aSGCFFTsHv0pK5by4LRUCbv1Ihs9CMl';
     const apiUrl = `https://api.giphy.com/v1/gifs/search?q=${query}&api_key=${api_key}&limit=15`;
 
-    return this.http.get(apiUrl).pipe(
+    return this.httpClient.get(apiUrl).pipe(
       map((response: any) => response.data.map((item: any) => item.images.fixed_height_small))
     );
   }
