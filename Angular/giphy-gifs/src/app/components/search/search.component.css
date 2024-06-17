@@ -4,7 +4,7 @@ input {
     border-radius: .5rem;
     border: 1px solid #cecdcd;
     margin-right: 2rem;
-    margin-bottom: 4rem;
+    margin-bottom: 1rem;
 }
 button {
     height: 33px;
@@ -12,4 +12,39 @@ button {
     border-radius: .5rem;
     border: none;
     cursor: pointer;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.container-title {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.container-img {
+    width: 210px;
+    height: 140px;
+    border-radius: .5rem;
+    text-align: center;
+    margin: 1rem;
+    background: #f3f3f3;
+    transition: transform .2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 10px 10px 5px -3px rgba(235,235,235,1); 
+
+}
+.container-img img {
+    border-radius: .5rem;
+}
+
+.container-img:hover {
+    transform: scale(1.2); 
+
 }

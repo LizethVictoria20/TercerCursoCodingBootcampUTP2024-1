@@ -1,9 +1,20 @@
 <div>
-  <input [formControl]="searchField" placeholder="Search Gif" />
-  <button (click)="onSearch()">Search</button>
-  <button (click)="clearResults()">Delete</button>
-</div>
+  <div class="container-title">
+    <h1>Giphy Gif</h1>
 
-<div *ngFor="let result of results">
-  <img [src]="result.url" alt="" />
+    <input [formControl]="searchField" placeholder="Search Gif" />
+    <button (click)="onSearch()">Search</button>
+    <button (click)="clearResults()">Delete</button>
+  </div>
+
+  <div class="container">
+    <div *ngFor="let result of results" class="container-img">
+      <img
+        [src]="result.url"
+        alt=""
+        [width]="result.width"
+        [height]="result.height"
+      />
+    </div>
+  </div>
 </div>
