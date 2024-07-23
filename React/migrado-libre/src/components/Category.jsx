@@ -30,25 +30,27 @@ function Category() {
 
   return (
     <div>
-      {categories.map((category) => (
-        <div key={category.id} className="-">
-          <button onClick={() => Menu(category.id)}>
-            {openCategories[category.id] ? (
-              <CiCircleChevUp />
-            ) : (
-              <CiCircleChevDown />
+      <h2>Categorías</h2>
+        {categories.map((category) => (
+          <div key={category.id} className="-">
+            <button className="button-categories" onClick={() => Menu(category.id)}>
+              {openCategories[category.id] ? (
+                <CiCircleChevUp />
+              ) : (
+                <CiCircleChevDown />
+              )}
+            </button>
+            <a href="google.com">{category.name}</a>
+            {openCategories[category.id] && (
+              <SubCategories
+                subCategory={category.id}
+                isOpen={openCategories[category.id]}
+              />
             )}
-          </button>
-          <a href="google.com">{category.name}</a>
-          {openCategories[category.id] && (
-            <SubCategories
-              subCategory={category.id}
-              isOpen={openCategories[category.id]}
-            />
-          )}
-        </div>
-      ))}
+          </div>
+        ))}
     </div>
+    
   );
 }
 
